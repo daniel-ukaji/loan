@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMCS - Chevron Nigeria Limited</title>
+    <style>
+        body {
+            font-family: 'Verdana', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            padding: 20px;
+            /* background-color: #ffffff; */
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #bb0000;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .form-group table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .form-group td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .form-group td input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #001188;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-group td input[readonly] {
+            background-color: #eee;
+        }
+
+        .form-group td label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #004080;
+        }
+
+        .section-title {
+            font-size: 16px;
+            color: #004080;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>CEMCS HUB LOAN PLANNER</h1>
+        </div>
+
+        <form name="frmPlan" method="post">
+            <div class="form-container">
+                <div class="form-group">
+                    <div class="section-title">Loan Information</div>
+                    <table>
+                        <tr>
+                            <td><label>Loan Amount:</label></td>
+                            <td><input type="text" name="ntxtLoanAmt" maxlength="20" value="1,000,000" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Loan Period (Max 60 Months):</label></td>
+                            <td><input type="text" name="ntxtMonths" maxlength="5" value="60" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Interest Rate pa:</label></td>
+                            <td><input type="text" name="ntxtInterest" maxlength="5" value="5" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Available For Loan:</label></td>
+                            <td><input type="text" name="ntxtSavingsBal" value="0" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>30% Savings Required:</label></td>
+                            <td><input type="text" name="ntxtTwoFive" value="300,000" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>1/3 Repayment Period:</label></td>
+                            <td><input type="text" name="ntxtOneFour" value="20" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Min. Savings Per Month (2.5%) on Loan:</label></td>
+                            <td><input type="text" name="ntxtFivePerc" value="25,000.00" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Actual Monthly Savings on Loans:</label></td>
+                            <td><input type="text" name="ntxtMonthlySavings" value="0.00"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Principal Repayment Per Month:</label></td>
+                            <td><input type="text" name="ntxtLoanDedMon" value="16,666.67" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Monthly Interest:</label></td>
+                            <td><input type="text" name="ntxtIntPerAnn" value="3,333.33" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Total Monthly Repayment:</label></td>
+                            <td><input type="text" name="ntxtTotMonDed" value="20,000.00" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label>Total Monthly Commitment:</label></td>
+                            <td><input type="text" name="ntxtTotMonCommit" value="" readonly></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title">Loan Repayment Details</div>
+                    <table>
+                        <tr>
+                            <td><label>Months</label></td>
+                            <td><label>Loan Balance</label></td>
+                            <td><label>Interest</label></td>
+                            <td><label>Tot. Offset</label></td>
+                            <td><label>Cumm. Savings</label></td>
+                            <td><label>Pay Back</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="ntxtMonths1" value="1" readonly></td>
+                            <td><input type="text" name="ntxtLoanBal1" value="-1,000,000" readonly></td>
+                            <td><input type="text" name="ntxtInterest1" value="-1,000,000" readonly></td>
+                            <td><input type="text" name="ntxtTOffset1" value="400,000" readonly></td>
+                            <td><input type="text" name="ntxtSaveBal1" value="400,000" readonly></td>
+                            <td><input type="text" name="ntxtNetDiff1" value="-600,000" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="ntxtMonths2" value="2" readonly></td>
+                            <td><input type="text" name="ntxtLoanBal2" value="-1,000,000" readonly></td>
+                            <td><input type="text" name="ntxtInterest2" value="-1,000,000" readonly></td>
+                            <td><input type="text" name="ntxtTOffset2" value="400,000" readonly></td>
+                            <td><input type="text" name="ntxtSaveBal2" value="400,000" readonly></td>
+                            <td><input type="text" name="ntxtNetDiff2" value="-600,000" readonly></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="footer">
+                <!-- <a href="javascript:windowClose();">Close Window</a> -->
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
