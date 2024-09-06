@@ -105,14 +105,14 @@
             const months = parseInt(monthsInput.value) || 0;
             const interestRate = parseFloat(document.forms["frmPlan"]["ntxtInterest"].value) / 100;
 
-            // Calculate the principal amount and interest for each month
+            // This will calculate the principal amount and interest for each month
             const principalAmount = loanAmount / months || 0;
             const interestAmount = (loanAmount * interestRate) / 12 || 0;
 
             // Reference to the table body where rows will be appended
             const repaymentTable = document.getElementById('repaymentTable');
 
-            // Clear previous rows if any
+            // This clears the previous rows if there any rows.
             repaymentTable.innerHTML = '';
 
             // Fill the repayment details for each month
@@ -132,7 +132,6 @@
                     <td><input type="text" name="ntxtSaveBal${i}" value="${remainingLoanAmount.toFixed(2)}" readonly></td>
                 `;
 
-                // Append the row to the table
                 repaymentTable.appendChild(row);
             }
         }
@@ -220,7 +219,6 @@
                             <td><label>Balance Loan Amount</label></td>
                         </tr>
                         <tbody id="repaymentTable">
-                            <!-- JavaScript will generate rows here -->
                         </tbody>
                     </table>
                 </div>
